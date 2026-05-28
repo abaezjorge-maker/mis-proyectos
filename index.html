@@ -200,6 +200,33 @@ section{
   border:1px solid rgba(255,255,255,.12);
 }
 
+
+.contact-email{
+  position:fixed;
+  top:18px;
+  right:25px;
+  z-index:2000;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 16px;
+  border-radius:16px;
+  background:rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(14px);
+  color:#67e8f9;
+  font-size:.9rem;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 0 28px rgba(103,232,249,.14);
+}
+
+.contact-email:hover{
+  border-color:rgba(103,232,249,.45);
+  box-shadow:0 0 35px rgba(103,232,249,.22);
+  transform:translateY(-1px);
+}
+
 footer{
   text-align:center;
   padding:35px 7%;
@@ -208,6 +235,15 @@ footer{
 }
 
 @media(max-width:900px){
+
+
+  .contact-email{
+    top:76px;
+    right:12px;
+    font-size:.75rem;
+    padding:8px 11px;
+    max-width:210px;
+  }
 
   .grid{
     grid-template-columns:1fr;
@@ -230,6 +266,11 @@ footer{
 <header>
   <div class="logo">Mis Proyectos</div>
 </header>
+
+
+<a class="contact-email" href="mailto:Abaezjorge@gmail.com">
+  📧 Abaezjorge@gmail.com
+</a>
 
 <section class="hero">
 
