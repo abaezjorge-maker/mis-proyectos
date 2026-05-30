@@ -261,10 +261,94 @@ footer{
   }
 
 }
+
+/* DARK MODE */
+body.dark-mode {
+  background: #020617;
+  color: white;
+}
+body:not(.dark-mode) {
+  background: #f0f4f8;
+  color: #0f172a;
+}
+body:not(.dark-mode)::before {
+  background:
+    radial-gradient(circle at 15% 20%,rgba(103,232,249,.08),transparent 32%),
+    radial-gradient(circle at 85% 10%,rgba(59,130,246,.08),transparent 35%);
+}
+body:not(.dark-mode) header {
+  background: rgba(240,244,248,.9);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+body:not(.dark-mode) .logo { color: #0891b2; }
+body:not(.dark-mode) .hero h1 { color: #0f172a; }
+body:not(.dark-mode) .hero p { color: #475569; }
+body:not(.dark-mode) .badge {
+  background: rgba(8,145,178,.1);
+  border-color: rgba(8,145,178,.3);
+  color: #0891b2;
+}
+body:not(.dark-mode) .project-card {
+  background: #ffffff;
+  border-color: rgba(0,0,0,.1);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+body:not(.dark-mode) .project-card:hover {
+  border-color: rgba(8,145,178,.4);
+  box-shadow: 0 20px 60px rgba(8,145,178,.12);
+}
+body:not(.dark-mode) .project-content h3 { color: #0891b2; }
+body:not(.dark-mode) .project-content p { color: #475569; }
+body:not(.dark-mode) .preview {
+  background: linear-gradient(135deg,rgba(8,145,178,.1),rgba(34,197,94,.08)), #e2f4f8;
+}
+body:not(.dark-mode) .search-box input {
+  background: #ffffff;
+  border-color: rgba(0,0,0,.12);
+  color: #0f172a;
+}
+body:not(.dark-mode) .search-box input::placeholder { color: #94a3b8; }
+body:not(.dark-mode) .edit {
+  background: rgba(0,0,0,.05);
+  color: #0f172a;
+  border-color: rgba(0,0,0,.1);
+}
+body:not(.dark-mode) .title h2 { color: #0f172a; }
+body:not(.dark-mode) .title p { color: #475569; }
+body:not(.dark-mode) footer { color: #64748b; border-top-color: rgba(0,0,0,.08); }
+body:not(.dark-mode) .contact-email {
+  background: rgba(8,145,178,.08);
+  border-color: rgba(8,145,178,.2);
+  color: #0891b2;
+}
+
+/* Toggle button */
+.dark-toggle-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  cursor: pointer;
+  font-size: 20px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+  backdrop-filter: blur(8px);
+}
+body:not(.dark-mode) .dark-toggle-btn {
+  background: rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.12);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.dark-toggle-btn:hover { transform: scale(1.1); }
 </style>
 </head>
 
-<body>
+<body class="dark-mode">
 
 <header>
   <div class="logo">Mis Proyectos</div>
@@ -591,7 +675,22 @@ function buscarProyectos(){
 
 }
 
+
+function toggleDarkProyectos() {
+  const isDark = document.body.classList.toggle('dark-mode');
+  document.getElementById('darkBtnP').textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('proyectosDark', isDark ? '1' : '0');
+}
+(function() {
+  const saved = localStorage.getItem('proyectosDark');
+  if (saved === '0') {
+    document.body.classList.remove('dark-mode');
+    const btn = document.getElementById('darkBtnP');
+    if (btn) btn.textContent = '🌙';
+  }
+})();
 </script>
 
+<button class="dark-toggle-btn" onclick="toggleDarkProyectos()" id="darkBtnP" title="Cambiar modo">☀️</button>
 </body>
 </html>
