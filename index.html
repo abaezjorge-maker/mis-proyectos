@@ -743,42 +743,6 @@ body:not(.dark-mode) .modal-divider { border-color: rgba(0,0,0,.08); }
 
     </div>
 
-    <!-- AQUATREE -->
-
-    <div class="project-card" data-name="aquatree agua arbol artificial universidad sostenibilidad hidratacion pendiente construccion">
-
-      <div class="preview">
-        🌳
-      </div>
-
-      <div class="project-content">
-
-        <span class="status pendiente">
-          En construcción
-        </span>
-
-        <h3>AquaTree</h3>
-
-        <p>
-          Árbol artificial inteligente dispensador de agua para universidades. El usuario introduce su botella en un hueco rectangular del tronco, el sistema la detecta automáticamente y la llena con agua potable.
-        </p>
-
-        <div class="project-actions">
-
-          <a href="#" class="edit" onclick="event.preventDefault(); alert('🌳 AquaTree está en construcción. Proyecto enviado como propuesta inicial a una universidad local.');">
-            En construcción
-          </a>
-
-          <a href="#" class="edit" onclick="event.preventDefault(); alert('AquaTree combina sostenibilidad, tecnología y diseño ecológico para crear una estación de hidratación inteligente dentro del campus universitario.');">
-            Detalles
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
     <!-- PROYECTO 4 -->
 
     <div class="project-card" data-name="frases by andy frases motivacion pensamientos">
@@ -855,7 +819,7 @@ body:not(.dark-mode) .modal-divider { border-color: rgba(0,0,0,.08); }
 
     <!-- THE SUPERMARKET -->
 
-    <div class="project-card" data-name="the supermarket supermercado virtual avatar carrito compra digital pendiente">
+    <div class="project-card" data-name="the supermarket supermercado virtual avatar carrito compra digital 3d">
 
       <div class="preview">
         🏪
@@ -863,20 +827,20 @@ body:not(.dark-mode) .modal-divider { border-color: rgba(0,0,0,.08); }
 
       <div class="project-content">
 
-        <span class="status pendiente">
-          Pendiente
+        <span class="status activo">
+          Activo
         </span>
 
         <h3>THE SUPERMARKET</h3>
 
         <p>
-          Simulador interactivo de supermercado virtual en desarrollo. Permitirá recorrer pasillos con un avatar, seleccionar productos, usar un carrito y simular una compra digital.
+          Simulador 3D interactivo de supermercado. Recorre los pasillos con tu avatar, agrega productos al carrito y paga en caja.
         </p>
 
         <div class="project-actions">
 
-          <a href="#" class="edit" onclick="event.preventDefault(); alert('🚧 Proyecto pendiente. Aún no está disponible para abrir.');">
-            Próximamente
+          <a href="#" class="open" onclick="event.preventDefault(); openCountdown()">
+            🕐 Cuenta regresiva
           </a>
 
           <a href="#" class="edit" onclick="event.preventDefault(); openModal('supermarket')">
@@ -1162,13 +1126,126 @@ function closeModalDirect() {
   document.getElementById('modalOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
+/* Escape cierra cualquier modal abierto */
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  closeModalDirect();
+  closeCountdownDirect();
+});
 </script>
 
 <button class="dark-toggle-btn" onclick="toggleDarkProyectos()" id="darkBtnP" title="Cambiar modo">☀️</button>
 
-<!-- ===== MODAL OVERLAY ===== -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+<!-- ===== COUNTDOWN MODAL ===== -->
+<div class="modal-overlay" id="countdownOverlay" onclick="closeCountdown(event)" style="z-index:6000">
+  <div class="countdown-box" id="countdownBox">
+    <button class="modal-close" onclick="closeCountdownDirect()" style="position:absolute;top:18px;right:18px">✕</button>
+    <div class="cd-icon">🏪</div>
+    <div class="cd-label">THE SUPERMARKET</div>
+    <div class="cd-subtitle">Se activará en</div>
+    <div class="cd-timer">
+      <div class="cd-unit"><span id="cdDays">10</span><small>días</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span id="cdHours">00</span><small>horas</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span id="cdMins">00</span><small>min</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span id="cdSecs">00</span><small>seg</small></div>
+    </div>
+    <div class="cd-bar-wrap"><div class="cd-bar" id="cdBar"></div></div>
+    <p class="cd-msg">El simulador 3D estará disponible muy pronto.<br>¡Vuelve a visitarnos!</p>
+  </div>
+</div>
+
+<style>
+.countdown-box{
+  position:relative;
+  background:linear-gradient(145deg,#0d1a2e,#0a1628);
+  border:1px solid rgba(103,232,249,.3);
+  border-radius:30px;
+  padding:42px 36px 36px;
+  max-width:460px;
+  width:92%;
+  text-align:center;
+  box-shadow:0 0 80px rgba(103,232,249,.15), 0 40px 100px rgba(0,0,0,.5);
+  animation:cdPop .4s cubic-bezier(.22,1,.36,1);
+}
+@keyframes cdPop{from{transform:scale(.88) translateY(24px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+.cd-icon{font-size:3.2rem;margin-bottom:10px;filter:drop-shadow(0 0 18px rgba(103,232,249,.45))}
+.cd-label{font-size:1.4rem;font-weight:900;color:#67e8f9;letter-spacing:2px;margin-bottom:4px}
+.cd-subtitle{color:#94a3b8;font-size:.9rem;margin-bottom:22px;text-transform:uppercase;letter-spacing:.12em}
+.cd-timer{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:22px}
+.cd-unit{display:flex;flex-direction:column;align-items:center;background:rgba(103,232,249,.08);border:1px solid rgba(103,232,249,.2);border-radius:14px;padding:14px 18px;min-width:72px}
+.cd-unit span{font-size:2.2rem;font-weight:900;color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.cd-unit small{font-size:.65rem;color:#67e8f9;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.cd-sep{font-size:1.8rem;font-weight:900;color:#67e8f9;opacity:.6;margin-bottom:18px}
+.cd-bar-wrap{background:rgba(255,255,255,.07);border-radius:999px;height:6px;overflow:hidden;margin-bottom:20px}
+.cd-bar{height:100%;border-radius:999px;background:linear-gradient(90deg,#67e8f9,#22c55e);transition:width 1s linear}
+.cd-msg{color:#94a3b8;font-size:.88rem;line-height:1.6}
+body:not(.dark-mode) .countdown-box{background:linear-gradient(145deg,#f0f9ff,#e0f2fe);border-color:rgba(8,145,178,.3);box-shadow:0 0 60px rgba(8,145,178,.1),0 30px 80px rgba(0,0,0,.1)}
+body:not(.dark-mode) .cd-label{color:#0891b2}
+body:not(.dark-mode) .cd-unit{background:rgba(8,145,178,.07);border-color:rgba(8,145,178,.2)}
+body:not(.dark-mode) .cd-unit span{color:#0f172a}
+body:not(.dark-mode) .cd-unit small{color:#0891b2}
+body:not(.dark-mode) .cd-sep{color:#0891b2}
+body:not(.dark-mode) .cd-msg{color:#64748b}
+body:not(.dark-mode) .cd-bar-wrap{background:rgba(0,0,0,.07)}
+</style>
+
+<script>
+/* ===== COUNTDOWN ===== */
+const CD_KEY = 'supermarket_launch';
+function getLaunchDate(){
+  let stored = localStorage.getItem(CD_KEY);
+  if(!stored){
+    const d = new Date();
+    d.setDate(d.getDate() + 10);
+    d.setHours(0,0,0,0);
+    localStorage.setItem(CD_KEY, d.getTime());
+    return d.getTime();
+  }
+  return parseInt(stored);
+}
+const LAUNCH = getLaunchDate();
+const TOTAL_MS = 10 * 24 * 60 * 60 * 1000;
+
+function pad(n){ return String(n).padStart(2,'0'); }
+
+function tickCountdown(){
+  const now = Date.now();
+  const diff = Math.max(0, LAUNCH - now);
+  const days  = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins  = Math.floor((diff % 3600000)  / 60000);
+  const secs  = Math.floor((diff % 60000)    / 1000);
+  document.getElementById('cdDays').textContent  = pad(days);
+  document.getElementById('cdHours').textContent = pad(hours);
+  document.getElementById('cdMins').textContent  = pad(mins);
+  document.getElementById('cdSecs').textContent  = pad(secs);
+  const elapsed = TOTAL_MS - diff;
+  const pct = Math.min(100, (elapsed / TOTAL_MS) * 100);
+  document.getElementById('cdBar').style.width = pct + '%';
+}
+
+let cdInterval = null;
+function openCountdown(){
+  tickCountdown();
+  cdInterval = setInterval(tickCountdown, 1000);
+  document.getElementById('countdownOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCountdown(e){
+  if(e.target === document.getElementById('countdownOverlay')) closeCountdownDirect();
+}
+function closeCountdownDirect(){
+  clearInterval(cdInterval);
+  document.getElementById('countdownOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
+
+<!-- ===== MODAL DETALLES ===== -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)" style="z-index:5000">
   <div class="modal-box" id="modalBox">
     <div class="modal-header">
       <div class="modal-icon" id="mIcon"></div>
@@ -1189,5 +1266,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDi
     <div class="modal-footer" id="mFooter"></div>
   </div>
 </div>
+
 </body>
 </html>
