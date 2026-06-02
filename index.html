@@ -336,6 +336,57 @@ body:not(.dark-mode) .category-title{
 .prueba{ background:rgba(250,204,21,.15); color:#facc15; }
 .pendiente{ background:rgba(148,163,184,.16); color:#cbd5e1; }
 
+
+.finance-cta{
+  max-width:950px;
+  margin:30px auto 0;
+  padding:24px;
+  border-radius:26px;
+  background:
+    linear-gradient(135deg,rgba(34,197,94,.16),rgba(103,232,249,.12)),
+    rgba(255,255,255,.07);
+  border:1px solid rgba(34,197,94,.28);
+  box-shadow:0 20px 70px rgba(34,197,94,.08);
+  text-align:center;
+}
+
+.finance-cta h2{
+  font-size:1.65rem;
+  color:var(--accent2);
+  margin-bottom:8px;
+}
+
+.finance-cta p{
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:16px;
+}
+
+.finance-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:14px 18px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#22c55e,#67e8f9);
+  color:#020617;
+  text-decoration:none;
+  font-weight:900;
+  box-shadow:0 14px 35px rgba(34,197,94,.18);
+  transition:.25s;
+}
+
+.finance-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 45px rgba(34,197,94,.25);
+}
+
+body:not(.dark-mode) .finance-cta{
+  background:linear-gradient(135deg,rgba(34,197,94,.11),rgba(8,145,178,.08)), #ffffff;
+  border-color:rgba(34,197,94,.22);
+}
+
 footer{
   text-align:center;
   padding:35px 7%;
@@ -978,6 +1029,19 @@ body:not(.dark-mode) .cd-bar-wrap{background:rgba(0,0,0,.07)}
 
   </div>
 </section>
+
+
+<section class="finance-cta">
+  <h2>💚 ¿Deseas financiar algún proyecto?</h2>
+  <p>
+    Si quieres apoyar, invertir o colaborar con alguno de estos proyectos,
+    puedes escribirme directamente.
+  </p>
+  <a class="finance-btn" href="mailto:Abaezjorge@gmail.com?subject=Quiero%20financiar%20un%20proyecto&body=Hola%20Andy,%20me%20interesa%20financiar%20o%20colaborar%20con%20uno%20de%20tus%20proyectos.">
+    📧 Escribe a: Abaezjorge@gmail.com
+  </a>
+</section>
+
 
 <footer>© 2026 — Panel personal de proyectos web.</footer>
 
