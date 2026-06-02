@@ -890,6 +890,42 @@ body:not(.dark-mode) .modal-divider { border-color: rgba(0,0,0,.08); }
 
     </div>
 
+    <!-- SIMULADOR ADN -->
+
+    <div class="project-card" data-name="simulador adn evolucion celulas dna matrix futurista">
+
+      <div class="preview">
+        🧬
+      </div>
+
+      <div class="project-content">
+
+        <span class="status activo">
+          Activo
+        </span>
+
+        <h3>Simulador ADN</h3>
+
+        <p>
+          Visualización futurista de doble hélice de ADN, células animadas y matrix rain. Estética terminal verde.
+        </p>
+
+        <div class="project-actions">
+
+          <a href="https://abaezjorge-maker.github.io/simulador-adn/" target="_blank" class="open">
+            Abrir
+          </a>
+
+          <a href="#" class="edit" onclick="event.preventDefault(); openModal('simuladoradn')">
+            Detalles
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
 </section>
@@ -1085,6 +1121,24 @@ const proyectosData = {
     ],
     url: null,
     urlLabel: null
+  },
+  "simuladoradn": {
+    icon: "🧬",
+    title: "Simulador ADN",
+    status: "Activo",
+    statusClass: "activo",
+    desc: "Simulador visual futurista de ADN con doble hélice giratoria en 3D, células flotantes animadas y lluvia de código tipo Matrix. Todo renderizado en Canvas puro, sin librerías externas, con una estética de terminal verde oscuro inmersiva.",
+    tags: ["HTML5", "Canvas 2D", "JavaScript", "Animación", "GitHub Pages"],
+    features: [
+      "Doble hélice de ADN giratoria con pares de bases, nodos y efecto de profundidad 3D",
+      "Matrix rain de fondo con caracteres de bases nitrogenadas (A, T, G, C) cayendo",
+      "Células flotantes animadas con núcleo, orgánulos y pulso en tiempo real",
+      "HUD completo con generación, mutaciones, estabilidad y secuencia genómica dinámica",
+      "Partículas ascendentes y efectos de brillo tipo laboratorio científico",
+      "Timer de simulación activo y lista de mutaciones que se actualizan automáticamente"
+    ],
+    url: "https://abaezjorge-maker.github.io/simulador-adn/",
+    urlLabel: "Abrir Proyecto"
   }
 };
 
