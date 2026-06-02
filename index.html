@@ -345,6 +345,179 @@ body:not(.dark-mode) .dark-toggle-btn {
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 .dark-toggle-btn:hover { transform: scale(1.1); }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  backdrop-filter: blur(8px);
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal-box {
+  background: #0d1526;
+  border: 1px solid rgba(103,232,249,.25);
+  border-radius: 28px;
+  max-width: 580px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow: 0 40px 120px rgba(103,232,249,.12);
+  transform: translateY(30px) scale(.97);
+  transition: transform .35s cubic-bezier(.22,1,.36,1);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(103,232,249,.3) transparent;
+}
+.modal-overlay.open .modal-box {
+  transform: translateY(0) scale(1);
+}
+body:not(.dark-mode) .modal-box {
+  background: #ffffff;
+  border-color: rgba(8,145,178,.2);
+  box-shadow: 0 40px 120px rgba(8,145,178,.12);
+}
+.modal-header {
+  padding: 28px 28px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.modal-icon {
+  font-size: 2.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.modal-header-text { flex: 1; }
+.modal-header-text h2 {
+  color: #67e8f9;
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+body:not(.dark-mode) .modal-header-text h2 { color: #0891b2; }
+.modal-header-text .modal-status {
+  font-size: .8rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+.modal-close {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  color: white;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background .2s;
+}
+.modal-close:hover { background: rgba(255,255,255,.15); }
+body:not(.dark-mode) .modal-close { color: #0f172a; border-color: rgba(0,0,0,.1); background: rgba(0,0,0,.05); }
+.modal-body { padding: 20px 28px 28px; }
+.modal-desc {
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  font-size: .95rem;
+}
+body:not(.dark-mode) .modal-desc { color: #475569; }
+.modal-section-title {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: #67e8f9;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+body:not(.dark-mode) .modal-section-title { color: #0891b2; }
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.modal-tag {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: .8rem;
+  background: rgba(103,232,249,.1);
+  border: 1px solid rgba(103,232,249,.2);
+  color: #a5f3fc;
+}
+body:not(.dark-mode) .modal-tag {
+  background: rgba(8,145,178,.08);
+  border-color: rgba(8,145,178,.2);
+  color: #0e7490;
+}
+.modal-features {
+  list-style: none;
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.modal-features li {
+  color: #cbd5e1;
+  font-size: .9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+body:not(.dark-mode) .modal-features li { color: #475569; }
+.modal-features li::before {
+  content: "✦";
+  color: #67e8f9;
+  font-size: .7rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+body:not(.dark-mode) .modal-features li::before { color: #0891b2; }
+.modal-footer {
+  padding: 0 28px 28px;
+  display: flex;
+  gap: 10px;
+}
+.modal-footer a {
+  flex: 1;
+  text-align: center;
+  padding: 13px;
+  border-radius: 13px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: .95rem;
+  transition: opacity .2s;
+}
+.modal-footer a:hover { opacity: .85; }
+.modal-btn-open {
+  background: #67e8f9;
+  color: #020617;
+}
+body:not(.dark-mode) .modal-btn-open { background: #0891b2; color: white; }
+.modal-btn-ghost {
+  background: rgba(255,255,255,.08);
+  color: white;
+  border: 1px solid rgba(255,255,255,.12);
+}
+body:not(.dark-mode) .modal-btn-ghost { background: rgba(0,0,0,.05); color: #0f172a; border-color: rgba(0,0,0,.1); }
+.modal-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin: 18px 0;
+}
+body:not(.dark-mode) .modal-divider { border-color: rgba(0,0,0,.08); }
 </style>
 </head>
 
@@ -414,7 +587,7 @@ body:not(.dark-mode) .dark-toggle-btn {
             Abrir
           </a>
 
-          <a href="#" class="edit">
+          <a href="#" class="edit" onclick="event.preventDefault(); openModal('dominancia88')">
             Detalles
           </a>
 
@@ -451,7 +624,7 @@ body:not(.dark-mode) .dark-toggle-btn {
             Abrir
           </a>
 
-          <a href="#" class="edit">
+          <a href="#" class="edit" onclick="event.preventDefault(); openModal('pronoslot')">
             Detalles
           </a>
 
@@ -488,7 +661,7 @@ body:not(.dark-mode) .dark-toggle-btn {
             Abrir
           </a>
 
-          <a href="#" class="edit">
+          <a href="#" class="edit" onclick="event.preventDefault(); openModal('kino')">
             Detalles
           </a>
 
@@ -524,7 +697,7 @@ body:not(.dark-mode) .dark-toggle-btn {
             Abrir
           </a>
 
-          <a href="#" class="edit">
+          <a href="#" class="edit" onclick="event.preventDefault(); openModal('tradingedge')">
             Detalles
           </a>
 
@@ -560,7 +733,7 @@ body:not(.dark-mode) .dark-toggle-btn {
             Pendiente
           </a>
 
-          <a href="#" class="edit">
+          <a href="#" class="edit" onclick="event.preventDefault(); openModal('aguainfinita')">
             Detalles
           </a>
 
@@ -632,7 +805,7 @@ body:not(.dark-mode) .dark-toggle-btn {
             Abrir
           </a>
 
-          <a href="#" class="edit">
+          <a href="#" class="edit" onclick="event.preventDefault(); openModal('frasesandy')">
             Detalles
           </a>
 
@@ -668,7 +841,7 @@ body:not(.dark-mode) .dark-toggle-btn {
             Abrir
           </a>
 
-          <a href="#" class="edit">
+          <a href="#" class="edit" onclick="event.preventDefault(); openModal('ideasandy')">
             Detalles
           </a>
 
@@ -706,7 +879,7 @@ body:not(.dark-mode) .dark-toggle-btn {
             Próximamente
           </a>
 
-          <a href="#" class="edit" onclick="event.preventDefault(); alert('THE SUPERMARKET está en fase de desarrollo.');">
+          <a href="#" class="edit" onclick="event.preventDefault(); openModal('supermarket')">
             Detalles
           </a>
 
@@ -743,7 +916,7 @@ body:not(.dark-mode) .dark-toggle-btn {
             Abrir
           </a>
 
-          <a href="#" class="edit">
+          <a href="#" class="edit" onclick="event.preventDefault(); openModal('faecafe')">
             Detalles
           </a>
 
@@ -763,31 +936,15 @@ body:not(.dark-mode) .dark-toggle-btn {
 
 <script>
 
+/* ===== BÚSQUEDA ===== */
 function buscarProyectos(){
-
   const input = document.getElementById("searchInput").value.toLowerCase();
-
-  const cards = document.querySelectorAll(".project-card");
-
-  cards.forEach(card=>{
-
-    const name = card.getAttribute("data-name").toLowerCase();
-
-    if(name.includes(input)){
-
-      card.style.display = "block";
-
-    }else{
-
-      card.style.display = "none";
-
-    }
-
+  document.querySelectorAll(".project-card").forEach(card=>{
+    card.style.display = card.getAttribute("data-name").toLowerCase().includes(input) ? "block" : "none";
   });
-
 }
 
-
+/* ===== DARK MODE ===== */
 function toggleDarkProyectos() {
   const isDark = document.body.classList.toggle('dark-mode');
   document.getElementById('darkBtnP').textContent = isDark ? '☀️' : '🌙';
@@ -801,8 +958,236 @@ function toggleDarkProyectos() {
     if (btn) btn.textContent = '🌙';
   }
 })();
+
+/* ===== DATOS DE PROYECTOS ===== */
+const proyectosData = {
+  "dominancia88": {
+    icon: "🎯",
+    title: "Dominancia 88",
+    status: "Activo",
+    statusClass: "activo",
+    desc: "Dominancia 88 es una plataforma de pronósticos de lotería con un sistema visual intuitivo. Permite a los usuarios consultar análisis de números frecuentes, patrones de aparición y sugerencias de jugadas, todo presentado en una interfaz moderna y fácil de usar.",
+    tags: ["HTML5", "CSS3", "JavaScript", "GitHub Pages"],
+    features: [
+      "Sistema visual de análisis de números con estadísticas de frecuencia",
+      "Pronósticos generados en base a patrones históricos de lotería",
+      "Diseño responsivo adaptado a móviles y escritorio",
+      "Interfaz intuitiva con resaltado de números dominantes",
+      "Actualización periódica de datos para mantener los pronósticos vigentes"
+    ],
+    url: "https://abaezjorge-maker.github.io/dominancia88/",
+    urlLabel: "Abrir Proyecto"
+  },
+  "pronoslot": {
+    icon: "🎰",
+    title: "Pronoslot",
+    status: "Activo",
+    statusClass: "activo",
+    desc: "Pronoslot es una plataforma completa de resultados y pronósticos de loterías dominicanas. Cuenta con un panel de administrador que permite actualizar los resultados diariamente, manteniéndose siempre al día con los sorteos más recientes.",
+    tags: ["HTML5", "CSS3", "JavaScript", "LocalStorage", "GitHub Pages"],
+    features: [
+      "Panel de administrador para carga y edición de resultados diarios",
+      "Resultados organizados por lotería, fecha y número de sorteo",
+      "Sistema de pronósticos basado en análisis de frecuencia",
+      "Interfaz tipo cartelera con visualización clara de números ganadores",
+      "Búsqueda y filtrado de resultados históricos por fecha o lotería",
+      "Diseño responsivo optimizado para consulta rápida desde el móvil"
+    ],
+    url: "https://abaezjorge-maker.github.io/Pronoslot/",
+    urlLabel: "Abrir Proyecto"
+  },
+  "kino": {
+    icon: "🎱",
+    title: "Simulador Kino",
+    status: "Activo",
+    statusClass: "activo",
+    desc: "El Simulador Kino es una herramienta estadística avanzada para el juego de Kino. Ofrece un modo en vivo que simula sorteos en tiempo real, análisis detallado de tickets, y está protegido con acceso por clave para mantener la privacidad de los datos.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Análisis estadístico", "GitHub Pages"],
+    features: [
+      "Modo en vivo que simula sorteos de Kino con animación de números",
+      "Análisis estadístico de tickets: frecuencias, rachas y patrones",
+      "Sistema de acceso por clave para proteger la herramienta",
+      "Generación de combinaciones sugeridas basadas en estadísticas",
+      "Historial de simulaciones guardado en sesión para comparación",
+      "Interfaz visual atractiva con resaltado de números calientes y fríos"
+    ],
+    url: "https://abaezjorge-maker.github.io/simulador-kino/",
+    urlLabel: "Abrir Proyecto"
+  },
+  "tradingedge": {
+    icon: "📈",
+    title: "Trading Edge",
+    status: "Activo",
+    statusClass: "activo",
+    desc: "Trading Edge es una landing page premium enfocada en el mundo del trading y la gestión del riesgo financiero. Diseñada con una estética profesional y moderna, transmite confianza y autoridad para captar la atención de traders e inversionistas.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Diseño Premium", "GitHub Pages"],
+    features: [
+      "Landing page de alto impacto visual con diseño orientado a conversión",
+      "Sección de conceptos clave sobre gestión de riesgo y psicología del trader",
+      "Animaciones y transiciones fluidas que elevan la percepción de calidad",
+      "Diseño responsivo optimizado para todos los dispositivos",
+      "Tipografía y paleta de colores cuidadosamente seleccionadas para el sector financiero",
+      "Call-to-action estratégicamente ubicados para maximizar engagement"
+    ],
+    url: "https://abaezjorge-maker.github.io/trading-edge/",
+    urlLabel: "Abrir Proyecto"
+  },
+  "aguainfinita": {
+    icon: "💧",
+    title: "Agua Infinita",
+    status: "En Prueba",
+    statusClass: "prueba",
+    desc: "Agua Infinita es un proyecto híbrido físico-digital que aborda la problemática del acceso al agua potable. La plataforma digital tiene como objetivo concienciar, informar y potencialmente conectar soluciones tecnológicas con comunidades que necesitan agua limpia.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Proyecto Social", "En desarrollo"],
+    features: [
+      "Página informativa sobre la crisis global del agua potable",
+      "Visualización de datos sobre escasez hídrica por región",
+      "Sección de soluciones tecnológicas y proyectos de bajo costo",
+      "Integración planificada con el componente físico del proyecto",
+      "Diseño pensado para ser accesible desde dispositivos con conexión limitada",
+      "Proyecto con potencial de impacto social real en comunidades locales"
+    ],
+    url: null,
+    urlLabel: null
+  },
+  "frasesandy": {
+    icon: "✍️",
+    title: "Frases By Andy",
+    status: "Activo",
+    statusClass: "activo",
+    desc: "Frases By Andy es una página minimalista y elegante dedicada a compartir frases y pensamientos originales. Cada frase está cuidadosamente presentada para generar impacto visual y emocional, invitando a la reflexión con un diseño limpio y sin distracciones.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Diseño Minimalista", "GitHub Pages"],
+    features: [
+      "Presentación visual limpia y minimalista que pone las palabras en primer plano",
+      "Frases y pensamientos originales de autoría propia",
+      "Navegación fluida entre frases con transiciones suaves",
+      "Diseño responsivo con tipografía elegante y legible",
+      "Funcionalidad de compartir frase directamente en redes sociales",
+      "Modo oscuro y claro para una lectura cómoda en cualquier ambiente"
+    ],
+    url: "https://abaezjorge-maker.github.io/frasesbyandy/",
+    urlLabel: "Abrir Proyecto"
+  },
+  "ideasandy": {
+    icon: "🚀",
+    title: "Ideas By Andy",
+    status: "Activo",
+    statusClass: "activo",
+    desc: "Ideas By Andy es una plataforma personal para capturar, publicar y desarrollar ideas que pueden convertirse en proyectos reales. Funciona como un laboratorio público de conceptos: desde startups hasta inventos, pasando por propuestas digitales y físicas.",
+    tags: ["HTML5", "CSS3", "JavaScript", "LocalStorage", "GitHub Pages"],
+    features: [
+      "Publicación y presentación visual de ideas en formato de tarjetas",
+      "Clasificación de ideas por categoría: digital, físico, social, tecnología",
+      "Descripción expandida de cada idea con su potencial y próximos pasos",
+      "Sistema de estado: idea, en desarrollo, ejecutada o descartada",
+      "Diseño dinámico que refleja creatividad y pensamiento innovador",
+      "Base para convertir conceptos en proyectos reales como Agua Infinita o THE SUPERMARKET"
+    ],
+    url: "https://abaezjorge-maker.github.io/ideas-by-andy/",
+    urlLabel: "Abrir Proyecto"
+  },
+  "supermarket": {
+    icon: "🏪",
+    title: "THE SUPERMARKET",
+    status: "Pendiente",
+    statusClass: "pendiente",
+    desc: "THE SUPERMARKET es un ambicioso simulador interactivo de supermercado virtual actualmente en desarrollo. El objetivo es crear una experiencia inmersiva donde el usuario pueda recorrer pasillos con un avatar, interactuar con productos y simular una compra digital completa.",
+    tags: ["JavaScript", "Canvas / WebGL", "Diseño de niveles", "Simulación", "En desarrollo"],
+    features: [
+      "Recorrido libre por pasillos del supermercado con avatar controlable",
+      "Sistema de inventario y carrito de compras interactivo",
+      "Catálogo de productos con precios, descripciones y stock simulado",
+      "Proceso de pago y checkout con resumen de compra",
+      "Diseño de ambiente con iluminación y efectos visuales inmersivos",
+      "Proyecto en fase de planeación y prototipado técnico"
+    ],
+    url: null,
+    urlLabel: null
+  },
+  "faecafe": {
+    icon: "☕",
+    title: "Fae Café & Libros",
+    status: "Pendiente",
+    statusClass: "pendiente",
+    desc: "Fae Café & Libros es una página de menú digital para un café local con concepto literario. Diseñada para ofrecer a los clientes una experiencia visual atractiva al consultar el menú desde su teléfono, reflejando la esencia acogedora y cultural del establecimiento.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Menú Digital", "Proyecto Local"],
+    features: [
+      "Menú digital completo con secciones de bebidas, comidas y recomendaciones",
+      "Diseño acogedor con estética de café literario: tonos cálidos y tipografía elegante",
+      "Galería visual de productos con fotografías y descripciones",
+      "Sección de eventos culturales y actividades del café",
+      "Optimizado para ser consultado desde móvil en el local",
+      "Pendiente de publicación en línea; actualmente disponible en versión local"
+    ],
+    url: null,
+    urlLabel: null
+  }
+};
+
+/* ===== ABRIR MODAL ===== */
+function openModal(key) {
+  const d = proyectosData[key];
+  if (!d) return;
+
+  document.getElementById('mIcon').textContent = d.icon;
+  document.getElementById('mTitle').textContent = d.title;
+
+  const st = document.getElementById('mStatus');
+  st.textContent = d.status;
+  st.className = 'modal-status ' + d.statusClass;
+
+  document.getElementById('mDesc').textContent = d.desc;
+
+  const tagsEl = document.getElementById('mTags');
+  tagsEl.innerHTML = d.tags.map(t => `<span class="modal-tag">${t}</span>`).join('');
+
+  const featEl = document.getElementById('mFeatures');
+  featEl.innerHTML = d.features.map(f => `<li>${f}</li>`).join('');
+
+  const footer = document.getElementById('mFooter');
+  if (d.url) {
+    footer.innerHTML = `<a href="${d.url}" target="_blank" class="modal-btn-open">${d.urlLabel}</a>`;
+  } else {
+    footer.innerHTML = `<a href="#" class="modal-btn-ghost" style="cursor:default;opacity:.6;">🚧 Próximamente disponible</a>`;
+  }
+
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
+}
+function closeModalDirect() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalDirect(); });
 </script>
 
 <button class="dark-toggle-btn" onclick="toggleDarkProyectos()" id="darkBtnP" title="Cambiar modo">☀️</button>
+
+<!-- ===== MODAL OVERLAY ===== -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal-box" id="modalBox">
+    <div class="modal-header">
+      <div class="modal-icon" id="mIcon"></div>
+      <div class="modal-header-text">
+        <h2 id="mTitle"></h2>
+        <span class="modal-status" id="mStatus"></span>
+      </div>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-desc" id="mDesc"></p>
+      <hr class="modal-divider">
+      <div class="modal-section-title">🛠 Tecnologías</div>
+      <div class="modal-tags" id="mTags"></div>
+      <div class="modal-section-title">✦ Características</div>
+      <ul class="modal-features" id="mFeatures"></ul>
+    </div>
+    <div class="modal-footer" id="mFooter"></div>
+  </div>
+</div>
 </body>
 </html>
