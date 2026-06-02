@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mis Proyectos Web</title>
+<title>Proyectos By Andy</title>
 
 <style>
 *{
@@ -12,10 +12,22 @@
   box-sizing:border-box;
 }
 
+:root{
+  --bg:#020617;
+  --panel:rgba(255,255,255,.07);
+  --panel-strong:rgba(255,255,255,.10);
+  --border:rgba(255,255,255,.12);
+  --text:white;
+  --muted:#cbd5e1;
+  --soft:#94a3b8;
+  --accent:#67e8f9;
+  --accent2:#22c55e;
+}
+
 body{
   font-family:Arial,sans-serif;
-  background:#020617;
-  color:white;
+  background:var(--bg);
+  color:var(--text);
   overflow-x:hidden;
 }
 
@@ -42,167 +54,7 @@ header{
 .logo{
   font-size:1.4rem;
   font-weight:900;
-  color:#67e8f9;
-}
-
-.hero{
-  padding:90px 7% 60px;
-  text-align:center;
-}
-
-.badge{
-  display:inline-block;
-  padding:10px 16px;
-  border-radius:999px;
-  background:rgba(103,232,249,.1);
-  border:1px solid rgba(103,232,249,.35);
-  color:#67e8f9;
-  margin-bottom:20px;
-}
-
-.hero h1{
-  font-size:clamp(2.5rem,6vw,5rem);
-  margin-bottom:20px;
-}
-
-.hero h1 span{
-  background:linear-gradient(90deg,#67e8f9,#22c55e);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-.hero p{
-  color:#cbd5e1;
-  max-width:700px;
-  margin:auto;
-  font-size:1.1rem;
-}
-
-section{
-  padding:70px 7%;
-}
-
-.title{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.title h2{
-  font-size:2.3rem;
-  margin-bottom:12px;
-}
-
-.title p{
-  color:#cbd5e1;
-}
-
-.search-box{
-  max-width:700px;
-  margin:0 auto 30px;
-}
-
-.search-box input{
-  width:100%;
-  padding:16px;
-  border-radius:18px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  color:white;
-  outline:none;
-  font-size:1rem;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-
-.project-card{
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:28px;
-  overflow:hidden;
-  transition:.35s;
-}
-
-.project-card:hover{
-  transform:translateY(-8px);
-  border-color:rgba(103,232,249,.45);
-  box-shadow:0 30px 90px rgba(103,232,249,.1);
-}
-
-.preview{
-  height:180px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:3rem;
-  background:
-    linear-gradient(135deg,rgba(103,232,249,.15),rgba(34,197,94,.12)),
-    #020617;
-}
-
-.project-content{
-  padding:24px;
-}
-
-.status{
-  display:inline-block;
-  padding:6px 10px;
-  border-radius:999px;
-  font-size:.8rem;
-  margin-bottom:12px;
-}
-
-.activo{
-  background:rgba(34,197,94,.15);
-  color:#22c55e;
-}
-
-.prueba{
-  background:rgba(250,204,21,.15);
-  color:#facc15;
-}
-
-.pendiente{
-  background:rgba(148,163,184,.16);
-  color:#cbd5e1;
-}
-
-.project-content h3{
-  color:#67e8f9;
-  margin-bottom:10px;
-}
-
-.project-content p{
-  color:#cbd5e1;
-  margin-bottom:18px;
-}
-
-.project-actions{
-  display:flex;
-  gap:10px;
-}
-
-.project-actions a{
-  flex:1;
-  text-align:center;
-  padding:12px;
-  border-radius:13px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.open{
-  background:#67e8f9;
-  color:#020617;
-}
-
-.edit{
-  background:rgba(255,255,255,.08);
-  color:white;
-  border:1px solid rgba(255,255,255,.12);
+  color:var(--accent);
 }
 
 .contact-email{
@@ -218,7 +70,7 @@ section{
   background:rgba(255,255,255,.075);
   border:1px solid rgba(255,255,255,.14);
   backdrop-filter:blur(14px);
-  color:#67e8f9;
+  color:var(--accent);
   font-size:.9rem;
   font-weight:bold;
   text-decoration:none;
@@ -231,15 +83,533 @@ section{
   transform:translateY(-1px);
 }
 
+.hero{
+  padding:85px 7% 45px;
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:999px;
+  background:rgba(103,232,249,.1);
+  border:1px solid rgba(103,232,249,.35);
+  color:var(--accent);
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(2.2rem,5.8vw,4.8rem);
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:720px;
+  margin:auto;
+  font-size:1.08rem;
+  line-height:1.7;
+}
+
+section{
+  padding:55px 7%;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:28px;
+}
+
+.title h2{
+  font-size:2.1rem;
+  margin-bottom:10px;
+}
+
+.title p{
+  color:var(--muted);
+}
+
+.featured{
+  max-width:950px;
+  margin:0 auto 34px;
+  padding:28px;
+  border-radius:30px;
+  background:
+    linear-gradient(135deg,rgba(103,232,249,.17),rgba(34,197,94,.10)),
+    rgba(255,255,255,.08);
+  border:1px solid rgba(103,232,249,.28);
+  box-shadow:0 25px 80px rgba(103,232,249,.10);
+}
+
+.featured-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:16px;
+}
+
+.featured-label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 13px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  color:#a5f3fc;
+  font-size:.82rem;
+  font-weight:bold;
+}
+
+.featured-main{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:20px;
+  align-items:center;
+}
+
+.featured-icon{
+  width:78px;
+  height:78px;
+  border-radius:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(2,6,23,.55);
+  border:1px solid rgba(255,255,255,.10);
+  font-size:2.4rem;
+}
+
+.featured h3{
+  font-size:1.8rem;
+  color:var(--accent);
+  margin-bottom:8px;
+}
+
+.featured p{
+  color:var(--muted);
+  line-height:1.65;
+}
+
+.featured-actions,
+.project-actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.btn{
+  text-align:center;
+  padding:12px 16px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+  white-space:nowrap;
+  font-size:.92rem;
+}
+
+.open{
+  background:var(--accent);
+  color:#020617;
+}
+
+.edit{
+  background:rgba(255,255,255,.08);
+  color:white;
+  border:1px solid rgba(255,255,255,.12);
+}
+
+.search-box{
+  max-width:950px;
+  margin:0 auto 18px;
+}
+
+.search-box input{
+  width:100%;
+  padding:16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  color:white;
+  outline:none;
+  font-size:1rem;
+}
+
+.project-list{
+  max-width:950px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.project-row{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:16px;
+  align-items:center;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:16px;
+  transition:.25s;
+}
+
+.project-row:hover{
+  transform:translateY(-3px);
+  border-color:rgba(103,232,249,.38);
+  box-shadow:0 20px 60px rgba(103,232,249,.08);
+}
+
+.project-icon{
+  width:54px;
+  height:54px;
+  border-radius:17px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.10);
+  font-size:1.85rem;
+}
+
+.project-info h3{
+  color:var(--accent);
+  margin-bottom:5px;
+  font-size:1.08rem;
+}
+
+.project-info p{
+  color:var(--muted);
+  line-height:1.45;
+  font-size:.92rem;
+}
+
+.status{
+  display:inline-block;
+  padding:5px 10px;
+  border-radius:999px;
+  font-size:.74rem;
+  margin-bottom:7px;
+  font-weight:bold;
+}
+
+.activo{ background:rgba(34,197,94,.15); color:#22c55e; }
+.prueba{ background:rgba(250,204,21,.15); color:#facc15; }
+.pendiente{ background:rgba(148,163,184,.16); color:#cbd5e1; }
+
 footer{
   text-align:center;
   padding:35px 7%;
-  color:#94a3b8;
+  color:var(--soft);
   border-top:1px solid rgba(255,255,255,.08);
 }
 
-@media(max-width:900px){
+/* LIGHT MODE */
+body:not(.dark-mode){
+  --bg:#f0f4f8;
+  --panel:#ffffff;
+  --panel-strong:#ffffff;
+  --border:rgba(0,0,0,.10);
+  --text:#0f172a;
+  --muted:#475569;
+  --soft:#64748b;
+  --accent:#0891b2;
+  --accent2:#22c55e;
+}
 
+body:not(.dark-mode)::before{
+  background:
+    radial-gradient(circle at 15% 20%,rgba(103,232,249,.08),transparent 32%),
+    radial-gradient(circle at 85% 10%,rgba(59,130,246,.08),transparent 35%);
+}
+
+body:not(.dark-mode) header{
+  background:rgba(240,244,248,.9);
+  border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+body:not(.dark-mode) .badge{
+  background:rgba(8,145,178,.1);
+  border-color:rgba(8,145,178,.3);
+}
+
+body:not(.dark-mode) .contact-email{
+  background:rgba(8,145,178,.08);
+  border-color:rgba(8,145,178,.2);
+}
+
+body:not(.dark-mode) .featured{
+  background:linear-gradient(135deg,rgba(8,145,178,.11),rgba(34,197,94,.08)), #ffffff;
+  border-color:rgba(8,145,178,.24);
+  box-shadow:0 20px 60px rgba(8,145,178,.10);
+}
+
+body:not(.dark-mode) .featured-label,
+body:not(.dark-mode) .project-icon{
+  background:rgba(8,145,178,.07);
+  border-color:rgba(8,145,178,.14);
+  color:#0e7490;
+}
+
+body:not(.dark-mode) .featured-icon{
+  background:rgba(8,145,178,.08);
+  border-color:rgba(8,145,178,.14);
+}
+
+body:not(.dark-mode) .edit{
+  background:rgba(0,0,0,.05);
+  color:#0f172a;
+  border-color:rgba(0,0,0,.1);
+}
+
+body:not(.dark-mode) .search-box input{
+  background:#ffffff;
+  border-color:rgba(0,0,0,.12);
+  color:#0f172a;
+}
+
+body:not(.dark-mode) .search-box input::placeholder{ color:#94a3b8; }
+body:not(.dark-mode) footer{ border-top-color:rgba(0,0,0,.08); }
+
+/* Toggle button */
+.dark-toggle-btn{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  z-index:999;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.1);
+  border:1.5px solid rgba(255,255,255,0.2);
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);
+  cursor:pointer;
+  font-size:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all .2s;
+  backdrop-filter:blur(8px);
+}
+body:not(.dark-mode) .dark-toggle-btn{
+  background:rgba(0,0,0,0.06);
+  border-color:rgba(0,0,0,0.12);
+  box-shadow:0 4px 20px rgba(0,0,0,0.1);
+}
+.dark-toggle-btn:hover{ transform:scale(1.1); }
+
+/* ===== MODAL ===== */
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  backdrop-filter:blur(8px);
+  z-index:5000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .3s;
+}
+.modal-overlay.open{
+  opacity:1;
+  pointer-events:all;
+}
+.modal-box{
+  background:#0d1526;
+  border:1px solid rgba(103,232,249,.25);
+  border-radius:28px;
+  max-width:580px;
+  width:100%;
+  max-height:88vh;
+  overflow-y:auto;
+  box-shadow:0 40px 120px rgba(103,232,249,.12);
+  transform:translateY(30px) scale(.97);
+  transition:transform .35s cubic-bezier(.22,1,.36,1);
+  scrollbar-width:thin;
+  scrollbar-color:rgba(103,232,249,.3) transparent;
+}
+.modal-overlay.open .modal-box{ transform:translateY(0) scale(1); }
+body:not(.dark-mode) .modal-box{
+  background:#ffffff;
+  border-color:rgba(8,145,178,.2);
+  box-shadow:0 40px 120px rgba(8,145,178,.12);
+}
+.modal-header{
+  padding:28px 28px 0;
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+}
+.modal-icon{ font-size:2.8rem; line-height:1; flex-shrink:0; }
+.modal-header-text{ flex:1; }
+.modal-header-text h2{
+  color:#67e8f9;
+  font-size:1.5rem;
+  margin-bottom:6px;
+}
+body:not(.dark-mode) .modal-header-text h2{ color:#0891b2; }
+.modal-header-text .modal-status{
+  font-size:.8rem;
+  padding:4px 10px;
+  border-radius:999px;
+  display:inline-block;
+}
+.modal-close{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  color:white;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  font-size:1.1rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  transition:background .2s;
+}
+.modal-close:hover{ background:rgba(255,255,255,.15); }
+body:not(.dark-mode) .modal-close{ color:#0f172a; border-color:rgba(0,0,0,.1); background:rgba(0,0,0,.05); }
+.modal-body{ padding:20px 28px 28px; }
+.modal-desc{
+  color:#cbd5e1;
+  line-height:1.7;
+  margin-bottom:22px;
+  font-size:.95rem;
+}
+body:not(.dark-mode) .modal-desc{ color:#475569; }
+.modal-section-title{
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:#67e8f9;
+  font-weight:700;
+  margin-bottom:10px;
+}
+body:not(.dark-mode) .modal-section-title{ color:#0891b2; }
+.modal-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:22px;
+}
+.modal-tag{
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:.8rem;
+  background:rgba(103,232,249,.1);
+  border:1px solid rgba(103,232,249,.2);
+  color:#a5f3fc;
+}
+body:not(.dark-mode) .modal-tag{
+  background:rgba(8,145,178,.08);
+  border-color:rgba(8,145,178,.2);
+  color:#0e7490;
+}
+.modal-features{
+  list-style:none;
+  margin-bottom:22px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.modal-features li{
+  color:#cbd5e1;
+  font-size:.9rem;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  line-height:1.5;
+}
+body:not(.dark-mode) .modal-features li{ color:#475569; }
+.modal-features li::before{
+  content:"✦";
+  color:#67e8f9;
+  font-size:.7rem;
+  margin-top:4px;
+  flex-shrink:0;
+}
+body:not(.dark-mode) .modal-features li::before{ color:#0891b2; }
+.modal-footer{
+  padding:0 28px 28px;
+  display:flex;
+  gap:10px;
+}
+.modal-footer a{
+  flex:1;
+  text-align:center;
+  padding:13px;
+  border-radius:13px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:.95rem;
+  transition:opacity .2s;
+}
+.modal-footer a:hover{ opacity:.85; }
+.modal-btn-open{ background:#67e8f9; color:#020617; }
+body:not(.dark-mode) .modal-btn-open{ background:#0891b2; color:white; }
+.modal-btn-ghost{
+  background:rgba(255,255,255,.08);
+  color:white;
+  border:1px solid rgba(255,255,255,.12);
+}
+body:not(.dark-mode) .modal-btn-ghost{ background:rgba(0,0,0,.05); color:#0f172a; border-color:rgba(0,0,0,.1); }
+.modal-divider{
+  border:none;
+  border-top:1px solid rgba(255,255,255,.08);
+  margin:18px 0;
+}
+body:not(.dark-mode) .modal-divider{ border-color:rgba(0,0,0,.08); }
+
+/* COUNTDOWN */
+.countdown-box{
+  position:relative;
+  background:linear-gradient(145deg,#0d1a2e,#0a1628);
+  border:1px solid rgba(103,232,249,.3);
+  border-radius:30px;
+  padding:42px 36px 36px;
+  max-width:460px;
+  width:92%;
+  text-align:center;
+  box-shadow:0 0 80px rgba(103,232,249,.15),0 40px 100px rgba(0,0,0,.5);
+  animation:cdPop .4s cubic-bezier(.22,1,.36,1);
+}
+@keyframes cdPop{from{transform:scale(.88) translateY(24px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+.cd-icon{font-size:3.2rem;margin-bottom:10px;filter:drop-shadow(0 0 18px rgba(103,232,249,.45))}
+.cd-label{font-size:1.4rem;font-weight:900;color:#67e8f9;letter-spacing:2px;margin-bottom:4px}
+.cd-subtitle{color:#94a3b8;font-size:.9rem;margin-bottom:22px;text-transform:uppercase;letter-spacing:.12em}
+.cd-timer{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:22px}
+.cd-unit{display:flex;flex-direction:column;align-items:center;background:rgba(103,232,249,.08);border:1px solid rgba(103,232,249,.2);border-radius:14px;padding:14px 18px;min-width:72px}
+.cd-unit span{font-size:2.2rem;font-weight:900;color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.cd-unit small{font-size:.65rem;color:#67e8f9;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+.cd-sep{font-size:1.8rem;font-weight:900;color:#67e8f9;opacity:.6;margin-bottom:18px}
+.cd-bar-wrap{background:rgba(255,255,255,.07);border-radius:999px;height:6px;overflow:hidden;margin-bottom:20px}
+.cd-bar{height:100%;border-radius:999px;background:linear-gradient(90deg,#67e8f9,#22c55e);transition:width 1s linear}
+.cd-msg{color:#94a3b8;font-size:.88rem;line-height:1.6}
+body:not(.dark-mode) .countdown-box{background:linear-gradient(145deg,#f0f9ff,#e0f2fe);border-color:rgba(8,145,178,.3);box-shadow:0 0 60px rgba(8,145,178,.1),0 30px 80px rgba(0,0,0,.1)}
+body:not(.dark-mode) .cd-label{color:#0891b2}
+body:not(.dark-mode) .cd-unit{background:rgba(8,145,178,.07);border-color:rgba(8,145,178,.2)}
+body:not(.dark-mode) .cd-unit span{color:#0f172a}
+body:not(.dark-mode) .cd-unit small{color:#0891b2}
+body:not(.dark-mode) .cd-sep{color:#0891b2}
+body:not(.dark-mode) .cd-msg{color:#64748b}
+body:not(.dark-mode) .cd-bar-wrap{background:rgba(0,0,0,.07)}
+
+@media(max-width:900px){
   .contact-email{
     top:76px;
     right:12px;
@@ -247,720 +617,289 @@ footer{
     padding:8px 11px;
     max-width:210px;
   }
-
-  .grid{
+  .hero{ padding:70px 5% 35px; }
+  section{ padding:45px 5%; }
+  .featured-main{
     grid-template-columns:1fr;
+    text-align:center;
   }
-
-  .hero{
-    padding:70px 5% 40px;
+  .featured-icon{ margin:auto; }
+  .featured-actions,
+  .project-actions{
+    width:100%;
+    justify-content:center;
   }
-
-  section{
-    padding:60px 5%;
+  .project-row{
+    grid-template-columns:auto 1fr;
+    align-items:start;
   }
-
+  .project-actions{
+    grid-column:1 / -1;
+  }
+  .project-actions .btn{
+    flex:1;
+  }
 }
 
-/* DARK MODE */
-body.dark-mode {
-  background: #020617;
-  color: white;
+@media(max-width:520px){
+  .featured{ padding:22px; }
+  .featured-actions{ flex-direction:column; }
+  .featured-actions .btn{ width:100%; }
+  .project-row{ grid-template-columns:1fr; text-align:center; }
+  .project-icon{ margin:auto; }
+  .cd-timer{ gap:3px; }
+  .cd-unit{ min-width:58px; padding:12px 9px; }
+  .cd-unit span{ font-size:1.6rem; }
 }
-body:not(.dark-mode) {
-  background: #f0f4f8;
-  color: #0f172a;
-}
-body:not(.dark-mode)::before {
-  background:
-    radial-gradient(circle at 15% 20%,rgba(103,232,249,.08),transparent 32%),
-    radial-gradient(circle at 85% 10%,rgba(59,130,246,.08),transparent 35%);
-}
-body:not(.dark-mode) header {
-  background: rgba(240,244,248,.9);
-  border-bottom: 1px solid rgba(0,0,0,.08);
-}
-body:not(.dark-mode) .logo { color: #0891b2; }
-body:not(.dark-mode) .hero h1 { color: #0f172a; }
-body:not(.dark-mode) .hero p { color: #475569; }
-body:not(.dark-mode) .badge {
-  background: rgba(8,145,178,.1);
-  border-color: rgba(8,145,178,.3);
-  color: #0891b2;
-}
-body:not(.dark-mode) .project-card {
-  background: #ffffff;
-  border-color: rgba(0,0,0,.1);
-  box-shadow: 0 2px 12px rgba(0,0,0,.06);
-}
-body:not(.dark-mode) .project-card:hover {
-  border-color: rgba(8,145,178,.4);
-  box-shadow: 0 20px 60px rgba(8,145,178,.12);
-}
-body:not(.dark-mode) .project-content h3 { color: #0891b2; }
-body:not(.dark-mode) .project-content p { color: #475569; }
-body:not(.dark-mode) .preview {
-  background: linear-gradient(135deg,rgba(8,145,178,.1),rgba(34,197,94,.08)), #e2f4f8;
-}
-body:not(.dark-mode) .search-box input {
-  background: #ffffff;
-  border-color: rgba(0,0,0,.12);
-  color: #0f172a;
-}
-body:not(.dark-mode) .search-box input::placeholder { color: #94a3b8; }
-body:not(.dark-mode) .edit {
-  background: rgba(0,0,0,.05);
-  color: #0f172a;
-  border-color: rgba(0,0,0,.1);
-}
-body:not(.dark-mode) .title h2 { color: #0f172a; }
-body:not(.dark-mode) .title p { color: #475569; }
-body:not(.dark-mode) footer { color: #64748b; border-top-color: rgba(0,0,0,.08); }
-body:not(.dark-mode) .contact-email {
-  background: rgba(8,145,178,.08);
-  border-color: rgba(8,145,178,.2);
-  color: #0891b2;
-}
-
-/* Toggle button */
-.dark-toggle-btn {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 999;
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.1);
-  border: 1.5px solid rgba(255,255,255,0.2);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  cursor: pointer;
-  font-size: 20px;
-  display: flex; align-items: center; justify-content: center;
-  transition: all .2s;
-  backdrop-filter: blur(8px);
-}
-body:not(.dark-mode) .dark-toggle-btn {
-  background: rgba(0,0,0,0.06);
-  border-color: rgba(0,0,0,0.12);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-.dark-toggle-btn:hover { transform: scale(1.1); }
-
-/* ===== MODAL ===== */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.75);
-  backdrop-filter: blur(8px);
-  z-index: 5000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .3s;
-}
-.modal-overlay.open {
-  opacity: 1;
-  pointer-events: all;
-}
-.modal-box {
-  background: #0d1526;
-  border: 1px solid rgba(103,232,249,.25);
-  border-radius: 28px;
-  max-width: 580px;
-  width: 100%;
-  max-height: 88vh;
-  overflow-y: auto;
-  box-shadow: 0 40px 120px rgba(103,232,249,.12);
-  transform: translateY(30px) scale(.97);
-  transition: transform .35s cubic-bezier(.22,1,.36,1);
-  scrollbar-width: thin;
-  scrollbar-color: rgba(103,232,249,.3) transparent;
-}
-.modal-overlay.open .modal-box {
-  transform: translateY(0) scale(1);
-}
-body:not(.dark-mode) .modal-box {
-  background: #ffffff;
-  border-color: rgba(8,145,178,.2);
-  box-shadow: 0 40px 120px rgba(8,145,178,.12);
-}
-.modal-header {
-  padding: 28px 28px 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-.modal-icon {
-  font-size: 2.8rem;
-  line-height: 1;
-  flex-shrink: 0;
-}
-.modal-header-text { flex: 1; }
-.modal-header-text h2 {
-  color: #67e8f9;
-  font-size: 1.5rem;
-  margin-bottom: 6px;
-}
-body:not(.dark-mode) .modal-header-text h2 { color: #0891b2; }
-.modal-header-text .modal-status {
-  font-size: .8rem;
-  padding: 4px 10px;
-  border-radius: 999px;
-  display: inline-block;
-}
-.modal-close {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.12);
-  color: white;
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  font-size: 1.1rem;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  transition: background .2s;
-}
-.modal-close:hover { background: rgba(255,255,255,.15); }
-body:not(.dark-mode) .modal-close { color: #0f172a; border-color: rgba(0,0,0,.1); background: rgba(0,0,0,.05); }
-.modal-body { padding: 20px 28px 28px; }
-.modal-desc {
-  color: #cbd5e1;
-  line-height: 1.7;
-  margin-bottom: 22px;
-  font-size: .95rem;
-}
-body:not(.dark-mode) .modal-desc { color: #475569; }
-.modal-section-title {
-  font-size: .75rem;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: #67e8f9;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-body:not(.dark-mode) .modal-section-title { color: #0891b2; }
-.modal-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 22px;
-}
-.modal-tag {
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: .8rem;
-  background: rgba(103,232,249,.1);
-  border: 1px solid rgba(103,232,249,.2);
-  color: #a5f3fc;
-}
-body:not(.dark-mode) .modal-tag {
-  background: rgba(8,145,178,.08);
-  border-color: rgba(8,145,178,.2);
-  color: #0e7490;
-}
-.modal-features {
-  list-style: none;
-  margin-bottom: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.modal-features li {
-  color: #cbd5e1;
-  font-size: .9rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  line-height: 1.5;
-}
-body:not(.dark-mode) .modal-features li { color: #475569; }
-.modal-features li::before {
-  content: "✦";
-  color: #67e8f9;
-  font-size: .7rem;
-  margin-top: 4px;
-  flex-shrink: 0;
-}
-body:not(.dark-mode) .modal-features li::before { color: #0891b2; }
-.modal-footer {
-  padding: 0 28px 28px;
-  display: flex;
-  gap: 10px;
-}
-.modal-footer a {
-  flex: 1;
-  text-align: center;
-  padding: 13px;
-  border-radius: 13px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: .95rem;
-  transition: opacity .2s;
-}
-.modal-footer a:hover { opacity: .85; }
-.modal-btn-open {
-  background: #67e8f9;
-  color: #020617;
-}
-body:not(.dark-mode) .modal-btn-open { background: #0891b2; color: white; }
-.modal-btn-ghost {
-  background: rgba(255,255,255,.08);
-  color: white;
-  border: 1px solid rgba(255,255,255,.12);
-}
-body:not(.dark-mode) .modal-btn-ghost { background: rgba(0,0,0,.05); color: #0f172a; border-color: rgba(0,0,0,.1); }
-.modal-divider {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,.08);
-  margin: 18px 0;
-}
-body:not(.dark-mode) .modal-divider { border-color: rgba(0,0,0,.08); }
 </style>
 </head>
 
 <body class="dark-mode">
 
 <header>
-  <div class="logo">Mis Proyectos</div>
+  <div class="logo">Proyectos By Andy</div>
 </header>
 
-<a class="contact-email" href="mailto:Abaezjorge@gmail.com">
-  📧 Abaezjorge@gmail.com
-</a>
+<a class="contact-email" href="mailto:Abaezjorge@gmail.com">📧 Abaezjorge@gmail.com</a>
 
 <section class="hero">
-
-  <div class="badge">
-    Dashboard personal web
-  </div>
-
-  <h1>
-    Todos tus proyectos en <span>un solo lugar.</span>
-  </h1>
-
+  <div class="badge">Dashboard personal web</div>
+  <h1><span>Proyectos By Andy</span></h1>
   <p>
-    Accede rápidamente a todas tus páginas web,
-    ideas y proyectos desde un panel moderno y visual.
+    Laboratorio digital de proyectos, ideas, experimentos e innovación.
   </p>
-
 </section>
 
 <section>
+  <div class="title">
+    <h2>Proyecto Principal</h2>
+    <p>La página destacada de tu ecosistema web.</p>
+  </div>
+
+  <div class="featured">
+    <div class="featured-top">
+      <span class="featured-label">⭐ Principal</span>
+      <span class="status activo">Activo</span>
+    </div>
+    <div class="featured-main">
+      <div class="featured-icon">🧠✨</div>
+      <div>
+        <h3>Mente & Alma</h3>
+        <p>
+          Plataforma espiritual donde el visitante escribe su nombre y recibe un versículo bíblico personalizado para su día,
+          acompañado de una reflexión breve.
+        </p>
+      </div>
+      <div class="featured-actions">
+        <a href="https://abaezjorge-maker.github.io/mente-alma/" target="_blank" class="btn open">Abrir</a>
+        <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('mentealma')">Detalles</a>
+      </div>
+    </div>
+  </div>
 
   <div class="title">
     <h2>Biblioteca de Proyectos</h2>
-    <p>Administra y abre cualquiera de tus páginas.</p>
+    <p>Lista completa de tus páginas y proyectos.</p>
   </div>
 
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="Buscar proyecto..." onkeyup="buscarProyectos()">
   </div>
 
-  <div class="grid" id="projectGrid">
+  <div class="project-list" id="projectList">
 
-    <!-- PROYECTO 1 -->
-
-    <div class="project-card" data-name="dominancia 88 loteria">
-
-      <div class="preview">
-        🎯
+    <div class="project-row" data-name="mente alma biblia versiculos fe reflexion espiritual">
+      <div class="project-icon">🧠✨</div>
+      <div class="project-info">
+        <span class="status activo">Activo</span>
+        <h3>Mente & Alma</h3>
+        <p>Versículo bíblico personalizado para cada visitante según su nombre.</p>
       </div>
+      <div class="project-actions">
+        <a href="https://abaezjorge-maker.github.io/mente-alma/" target="_blank" class="btn open">Abrir</a>
+        <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('mentealma')">Detalles</a>
+      </div>
+    </div>
 
-      <div class="project-content">
-
-        <span class="status activo">
-          Activo
-        </span>
-
+    <div class="project-row" data-name="dominancia 88 loteria">
+      <div class="project-icon">🎯</div>
+      <div class="project-info">
+        <span class="status activo">Activo</span>
         <h3>Dominancia 88</h3>
-
-        <p>
-          Página de pronósticos y sistema visual de lotería.
-        </p>
-
-        <div class="project-actions">
-
-          <a href="https://abaezjorge-maker.github.io/dominancia88/" target="_blank" class="open">
-            Abrir
-          </a>
-
-          <a href="#" class="edit" onclick="event.preventDefault(); openModal('dominancia88')">
-            Detalles
-          </a>
-
-        </div>
-
+        <p>Página de pronósticos y sistema visual de lotería.</p>
       </div>
-
+      <div class="project-actions">
+        <a href="https://abaezjorge-maker.github.io/dominancia88/" target="_blank" class="btn open">Abrir</a>
+        <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('dominancia88')">Detalles</a>
+      </div>
     </div>
 
-    
-    <!-- PRONOSLOT -->
-
-    <div class="project-card" data-name="pronoslot loteria pronosticos resultados loterias rd">
-
-      <div class="preview">
-        🎰
-      </div>
-
-      <div class="project-content">
-
-        <span class="status activo">
-          Activo
-        </span>
-
+    <div class="project-row" data-name="pronoslot loteria pronosticos resultados loterias rd">
+      <div class="project-icon">🎰</div>
+      <div class="project-info">
+        <span class="status activo">Activo</span>
         <h3>Pronoslot</h3>
-
-        <p>
-          Plataforma de resultados y pronósticos de loterías con panel de administrador y actualización diaria.
-        </p>
-
-        <div class="project-actions">
-
-          <a href="https://abaezjorge-maker.github.io/Pronoslot/" target="_blank" class="open">
-            Abrir
-          </a>
-
-          <a href="#" class="edit" onclick="event.preventDefault(); openModal('pronoslot')">
-            Detalles
-          </a>
-
-        </div>
-
+        <p>Resultados y pronósticos de loterías con panel de administrador.</p>
       </div>
-
+      <div class="project-actions">
+        <a href="https://abaezjorge-maker.github.io/Pronoslot/" target="_blank" class="btn open">Abrir</a>
+        <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('pronoslot')">Detalles</a>
+      </div>
     </div>
 
-
-    <!-- SIMULADOR KINO -->
-
-    <div class="project-card" data-name="simulador kino numeros loteria estadisticas">
-
-      <div class="preview">
-        🎱
-      </div>
-
-      <div class="project-content">
-
-        <span class="status activo">
-          Activo
-        </span>
-
+    <div class="project-row" data-name="simulador kino numeros loteria estadisticas">
+      <div class="project-icon">🎱</div>
+      <div class="project-info">
+        <span class="status activo">Activo</span>
         <h3>Simulador Kino</h3>
-
-        <p>
-          Simulador estadístico de Kino con modo en vivo, análisis de tickets y acceso por clave.
-        </p>
-
-        <div class="project-actions">
-
-          <a href="https://abaezjorge-maker.github.io/simulador-kino/" target="_blank" class="open">
-            Abrir
-          </a>
-
-          <a href="#" class="edit" onclick="event.preventDefault(); openModal('kino')">
-            Detalles
-          </a>
-
-        </div>
-
+        <p>Simulador estadístico de Kino con análisis de tickets y acceso por clave.</p>
       </div>
-
+      <div class="project-actions">
+        <a href="https://abaezjorge-maker.github.io/simulador-kino/" target="_blank" class="btn open">Abrir</a>
+        <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('kino')">Detalles</a>
+      </div>
     </div>
 
-    <!-- PROYECTO 2 -->
-
-    <div class="project-card" data-name="trading edge trading">
-
-      <div class="preview">
-        📈
-      </div>
-
-      <div class="project-content">
-
-        <span class="status activo">
-          Activo
-        </span>
-
+    <div class="project-row" data-name="trading edge trading">
+      <div class="project-icon">📈</div>
+      <div class="project-info">
+        <span class="status activo">Activo</span>
         <h3>Trading Edge</h3>
-
-        <p>
-          Landing premium sobre trading y gestión de riesgo.
-        </p>
-
-        <div class="project-actions">
-
-          <a href="https://abaezjorge-maker.github.io/trading-edge/" target="_blank" class="open">
-            Abrir
-          </a>
-
-          <a href="#" class="edit" onclick="event.preventDefault(); openModal('tradingedge')">
-            Detalles
-          </a>
-
-        </div>
-
+        <p>Landing premium sobre trading y gestión de riesgo.</p>
       </div>
-
+      <div class="project-actions">
+        <a href="https://abaezjorge-maker.github.io/trading-edge/" target="_blank" class="btn open">Abrir</a>
+        <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('tradingedge')">Detalles</a>
+      </div>
     </div>
 
-    <!-- PROYECTO 3 -->
-
-    <div class="project-card" data-name="agua infinita proyecto">
-
-      <div class="preview">
-        💧
-      </div>
-
-      <div class="project-content">
-
-        <span class="status prueba">
-          Prueba
-        </span>
-
-        <h3>Agua Infinita</h3>
-
-        <p>
-          Proyecto físico y digital sobre agua potable.
-        </p>
-
-        <div class="project-actions">
-
-          <a href="#" class="open">
-            Pendiente
-          </a>
-
-          <a href="#" class="edit" onclick="event.preventDefault(); openModal('aguainfinita')">
-            Detalles
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- PROYECTO 4 -->
-
-    <div class="project-card" data-name="frases by andy frases motivacion pensamientos">
-
-      <div class="preview">
-        ✍️
-      </div>
-
-      <div class="project-content">
-
-        <span class="status activo">
-          Activo
-        </span>
-
+    <div class="project-row" data-name="frases by andy frases motivacion pensamientos">
+      <div class="project-icon">✍️</div>
+      <div class="project-info">
+        <span class="status activo">Activo</span>
         <h3>Frases By Andy</h3>
-
-        <p>
-          Página minimalista de frases y pensamientos originales.
-        </p>
-
-        <div class="project-actions">
-
-          <a href="https://abaezjorge-maker.github.io/frasesbyandy/" target="_blank" class="open">
-            Abrir
-          </a>
-
-          <a href="#" class="edit" onclick="event.preventDefault(); openModal('frasesandy')">
-            Detalles
-          </a>
-
-        </div>
-
+        <p>Página minimalista de frases y pensamientos originales.</p>
       </div>
-
+      <div class="project-actions">
+        <a href="https://abaezjorge-maker.github.io/frasesbyandy/" target="_blank" class="btn open">Abrir</a>
+        <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('frasesandy')">Detalles</a>
+      </div>
     </div>
 
-    <!-- PROYECTO 5 -->
-
-    <div class="project-card" data-name="ideas by andy ideas proyectos startup">
-
-      <div class="preview">
-        🚀
-      </div>
-
-      <div class="project-content">
-
-        <span class="status activo">
-          Activo
-        </span>
-
+    <div class="project-row" data-name="ideas by andy ideas proyectos startup">
+      <div class="project-icon">🚀</div>
+      <div class="project-info">
+        <span class="status activo">Activo</span>
         <h3>Ideas By Andy</h3>
-
-        <p>
-          Plataforma para publicar ideas y convertirlas en proyectos reales.
-        </p>
-
-        <div class="project-actions">
-
-          <a href="https://abaezjorge-maker.github.io/ideas-by-andy/" target="_blank" class="open">
-            Abrir
-          </a>
-
-          <a href="#" class="edit" onclick="event.preventDefault(); openModal('ideasandy')">
-            Detalles
-          </a>
-
-        </div>
-
+        <p>Plataforma para publicar ideas y convertirlas en proyectos reales.</p>
       </div>
-
+      <div class="project-actions">
+        <a href="https://abaezjorge-maker.github.io/ideas-by-andy/" target="_blank" class="btn open">Abrir</a>
+        <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('ideasandy')">Detalles</a>
+      </div>
     </div>
 
-
-
-    <!-- THE SUPERMARKET -->
-
-    <div class="project-card" data-name="the supermarket supermercado virtual avatar carrito compra digital 3d">
-
-      <div class="preview">
-        🏪
-      </div>
-
-      <div class="project-content">
-
-        <span class="status activo">
-          Activo
-        </span>
-
-        <h3>THE SUPERMARKET</h3>
-
-        <p>
-          Simulador 3D interactivo de supermercado. Recorre los pasillos con tu avatar, agrega productos al carrito y paga en caja.
-        </p>
-
-        <div class="project-actions">
-
-          <a href="#" class="open" onclick="event.preventDefault(); openCountdown()">
-            🕐 Cuenta regresiva
-          </a>
-
-          <a href="#" class="edit" onclick="event.preventDefault(); openModal('supermarket')">
-            Detalles
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- PROYECTO 6 -->
-
-    <div class="project-card" data-name="fae cafe libros menu cafeteria pendiente pagina local">
-
-      <div class="preview">
-        ☕
-      </div>
-
-      <div class="project-content">
-
-        <span class="status pendiente">
-          Pendiente
-        </span>
-
-        <h3>Fae Café & Libros</h3>
-
-        <p>
-          Página local de menú digital para café y libros. Proyecto pendiente de publicar.
-        </p>
-
-        <div class="project-actions">
-
-          <a href="file:///C:/Users/Andy/Desktop/MisProyectos/Fae/index.html" target="_blank" class="open">
-            Abrir
-          </a>
-
-          <a href="#" class="edit" onclick="event.preventDefault(); openModal('faecafe')">
-            Detalles
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- SIMULADOR ADN -->
-
-    <div class="project-card" data-name="simulador adn evolucion celulas dna matrix futurista">
-
-      <div class="preview">
-        🧬
-      </div>
-
-      <div class="project-content">
-
-        <span class="status activo">
-          Activo
-        </span>
-
+    <div class="project-row" data-name="simulador adn evolucion celulas dna matrix futurista">
+      <div class="project-icon">🧬</div>
+      <div class="project-info">
+        <span class="status activo">Activo</span>
         <h3>Simulador ADN</h3>
-
-        <p>
-          Visualización futurista de doble hélice de ADN, células animadas y matrix rain. Estética terminal verde.
-        </p>
-
-        <div class="project-actions">
-
-          <a href="https://abaezjorge-maker.github.io/simulador-adn/" target="_blank" class="open">
-            Abrir
-          </a>
-
-          <a href="#" class="edit" onclick="event.preventDefault(); openModal('simuladoradn')">
-            Detalles
-          </a>
-
-        </div>
-
+        <p>Doble hélice de ADN, células animadas y lluvia Matrix.</p>
       </div>
+      <div class="project-actions">
+        <a href="https://abaezjorge-maker.github.io/simulador-adn/" target="_blank" class="btn open">Abrir</a>
+        <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('simuladoradn')">Detalles</a>
+      </div>
+    </div>
 
+    <div class="project-row" data-name="agua infinita proyecto agua potable social">
+      <div class="project-icon">💧</div>
+      <div class="project-info">
+        <span class="status prueba">Prueba</span>
+        <h3>Agua Infinita</h3>
+        <p>Proyecto físico y digital sobre agua potable.</p>
+      </div>
+      <div class="project-actions">
+        <a href="#" class="btn open" onclick="event.preventDefault(); openModal('aguainfinita')">Ver</a>
+        <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('aguainfinita')">Detalles</a>
+      </div>
+    </div>
+
+    <div class="project-row" data-name="the supermarket supermercado virtual avatar carrito compra digital 3d">
+      <div class="project-icon">🏪</div>
+      <div class="project-info">
+        <span class="status pendiente">Pendiente</span>
+        <h3>THE SUPERMARKET</h3>
+        <p>Simulador 3D interactivo de supermercado con avatar y carrito.</p>
+      </div>
+      <div class="project-actions">
+        <a href="#" class="btn open" onclick="event.preventDefault(); openCountdown()">Cuenta regresiva</a>
+        <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('supermarket')">Detalles</a>
+      </div>
+    </div>
+
+    <div class="project-row" data-name="fae cafe libros menu cafeteria pendiente pagina local">
+      <div class="project-icon">☕</div>
+      <div class="project-info">
+        <span class="status pendiente">Pendiente</span>
+        <h3>Fae Café & Libros</h3>
+        <p>Página local de menú digital para café y libros.</p>
+      </div>
+      <div class="project-actions">
+        <a href="file:///C:/Users/Andy/Desktop/MisProyectos/Fae/index.html" target="_blank" class="btn open">Abrir</a>
+        <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('faecafe')">Detalles</a>
+      </div>
     </div>
 
   </div>
-
 </section>
 
-<footer>
-  © 2026 — Panel personal de proyectos web.
-</footer>
+<footer>© 2026 — Panel personal de proyectos web.</footer>
 
 <script>
-
 /* ===== BÚSQUEDA ===== */
 function buscarProyectos(){
   const input = document.getElementById("searchInput").value.toLowerCase();
-  document.querySelectorAll(".project-card").forEach(card=>{
-    card.style.display = card.getAttribute("data-name").toLowerCase().includes(input) ? "block" : "none";
+  document.querySelectorAll(".project-row").forEach(row=>{
+    row.style.display = row.getAttribute("data-name").toLowerCase().includes(input) ? "grid" : "none";
   });
 }
 
 /* ===== DARK MODE ===== */
-function toggleDarkProyectos() {
+function toggleDarkProyectos(){
   const isDark = document.body.classList.toggle('dark-mode');
   document.getElementById('darkBtnP').textContent = isDark ? '☀️' : '🌙';
   localStorage.setItem('proyectosDark', isDark ? '1' : '0');
 }
-(function() {
+(function(){
   const saved = localStorage.getItem('proyectosDark');
-  if (saved === '0') {
+  if(saved === '0'){
     document.body.classList.remove('dark-mode');
     const btn = document.getElementById('darkBtnP');
-    if (btn) btn.textContent = '🌙';
+    if(btn) btn.textContent = '🌙';
   }
 })();
 
 /* ===== DATOS DE PROYECTOS ===== */
 const proyectosData = {
+  "mentealma": {
+    icon: "🧠✨",
+    title: "Mente & Alma",
+    status: "Activo",
+    statusClass: "activo",
+    desc: "Mente & Alma es una experiencia espiritual personalizada. El visitante escribe su nombre y recibe un versículo bíblico junto con una reflexión para fortalecer su día.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Biblia", "GitHub Pages"],
+    features: [
+      "Versículo personalizado según el nombre del visitante",
+      "Reflexión espiritual automática",
+      "Diseño limpio y enfocado en la lectura",
+      "Botón para copiar el versículo",
+      "Generación de nuevos versículos",
+      "Compatible con móviles y computadoras"
+    ],
+    url: "https://abaezjorge-maker.github.io/mente-alma/",
+    urlLabel: "Abrir Proyecto"
+  },
   "dominancia88": {
     icon: "🎯",
     title: "Dominancia 88",
@@ -1143,9 +1082,9 @@ const proyectosData = {
 };
 
 /* ===== ABRIR MODAL ===== */
-function openModal(key) {
+function openModal(key){
   const d = proyectosData[key];
-  if (!d) return;
+  if(!d) return;
 
   document.getElementById('mIcon').textContent = d.icon;
   document.getElementById('mTitle').textContent = d.title;
@@ -1163,9 +1102,9 @@ function openModal(key) {
   featEl.innerHTML = d.features.map(f => `<li>${f}</li>`).join('');
 
   const footer = document.getElementById('mFooter');
-  if (d.url) {
+  if(d.url){
     footer.innerHTML = `<a href="${d.url}" target="_blank" class="modal-btn-open">${d.urlLabel}</a>`;
-  } else {
+  }else{
     footer.innerHTML = `<a href="#" class="modal-btn-ghost" style="cursor:default;opacity:.6;">🚧 Próximamente disponible</a>`;
   }
 
@@ -1173,80 +1112,14 @@ function openModal(key) {
   document.body.style.overflow = 'hidden';
 }
 
-function closeModal(e) {
-  if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
+function closeModal(e){
+  if(e.target === document.getElementById('modalOverlay')) closeModalDirect();
 }
-function closeModalDirect() {
+function closeModalDirect(){
   document.getElementById('modalOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
-/* Escape cierra cualquier modal abierto */
-document.addEventListener('keydown', e => {
-  if (e.key !== 'Escape') return;
-  closeModalDirect();
-  closeCountdownDirect();
-});
-</script>
 
-<button class="dark-toggle-btn" onclick="toggleDarkProyectos()" id="darkBtnP" title="Cambiar modo">☀️</button>
-
-<!-- ===== COUNTDOWN MODAL ===== -->
-<div class="modal-overlay" id="countdownOverlay" onclick="closeCountdown(event)" style="z-index:6000">
-  <div class="countdown-box" id="countdownBox">
-    <button class="modal-close" onclick="closeCountdownDirect()" style="position:absolute;top:18px;right:18px">✕</button>
-    <div class="cd-icon">🏪</div>
-    <div class="cd-label">THE SUPERMARKET</div>
-    <div class="cd-subtitle">Se activará en</div>
-    <div class="cd-timer">
-      <div class="cd-unit"><span id="cdDays">10</span><small>días</small></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><span id="cdHours">00</span><small>horas</small></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><span id="cdMins">00</span><small>min</small></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-unit"><span id="cdSecs">00</span><small>seg</small></div>
-    </div>
-    <div class="cd-bar-wrap"><div class="cd-bar" id="cdBar"></div></div>
-    <p class="cd-msg">El simulador 3D estará disponible muy pronto.<br>¡Vuelve a visitarnos!</p>
-  </div>
-</div>
-
-<style>
-.countdown-box{
-  position:relative;
-  background:linear-gradient(145deg,#0d1a2e,#0a1628);
-  border:1px solid rgba(103,232,249,.3);
-  border-radius:30px;
-  padding:42px 36px 36px;
-  max-width:460px;
-  width:92%;
-  text-align:center;
-  box-shadow:0 0 80px rgba(103,232,249,.15), 0 40px 100px rgba(0,0,0,.5);
-  animation:cdPop .4s cubic-bezier(.22,1,.36,1);
-}
-@keyframes cdPop{from{transform:scale(.88) translateY(24px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
-.cd-icon{font-size:3.2rem;margin-bottom:10px;filter:drop-shadow(0 0 18px rgba(103,232,249,.45))}
-.cd-label{font-size:1.4rem;font-weight:900;color:#67e8f9;letter-spacing:2px;margin-bottom:4px}
-.cd-subtitle{color:#94a3b8;font-size:.9rem;margin-bottom:22px;text-transform:uppercase;letter-spacing:.12em}
-.cd-timer{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:22px}
-.cd-unit{display:flex;flex-direction:column;align-items:center;background:rgba(103,232,249,.08);border:1px solid rgba(103,232,249,.2);border-radius:14px;padding:14px 18px;min-width:72px}
-.cd-unit span{font-size:2.2rem;font-weight:900;color:#fff;line-height:1;font-variant-numeric:tabular-nums}
-.cd-unit small{font-size:.65rem;color:#67e8f9;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
-.cd-sep{font-size:1.8rem;font-weight:900;color:#67e8f9;opacity:.6;margin-bottom:18px}
-.cd-bar-wrap{background:rgba(255,255,255,.07);border-radius:999px;height:6px;overflow:hidden;margin-bottom:20px}
-.cd-bar{height:100%;border-radius:999px;background:linear-gradient(90deg,#67e8f9,#22c55e);transition:width 1s linear}
-.cd-msg{color:#94a3b8;font-size:.88rem;line-height:1.6}
-body:not(.dark-mode) .countdown-box{background:linear-gradient(145deg,#f0f9ff,#e0f2fe);border-color:rgba(8,145,178,.3);box-shadow:0 0 60px rgba(8,145,178,.1),0 30px 80px rgba(0,0,0,.1)}
-body:not(.dark-mode) .cd-label{color:#0891b2}
-body:not(.dark-mode) .cd-unit{background:rgba(8,145,178,.07);border-color:rgba(8,145,178,.2)}
-body:not(.dark-mode) .cd-unit span{color:#0f172a}
-body:not(.dark-mode) .cd-unit small{color:#0891b2}
-body:not(.dark-mode) .cd-sep{color:#0891b2}
-body:not(.dark-mode) .cd-msg{color:#64748b}
-body:not(.dark-mode) .cd-bar-wrap{background:rgba(0,0,0,.07)}
-</style>
-
-<script>
 /* ===== COUNTDOWN ===== */
 const CD_KEY = 'supermarket_launch';
 function getLaunchDate(){
@@ -1296,7 +1169,37 @@ function closeCountdownDirect(){
   document.getElementById('countdownOverlay').classList.remove('open');
   document.body.style.overflow = '';
 }
+
+/* Escape cierra cualquier modal abierto */
+document.addEventListener('keydown', e=>{
+  if(e.key !== 'Escape') return;
+  closeModalDirect();
+  closeCountdownDirect();
+});
 </script>
+
+<button class="dark-toggle-btn" onclick="toggleDarkProyectos()" id="darkBtnP" title="Cambiar modo">☀️</button>
+
+<!-- ===== COUNTDOWN MODAL ===== -->
+<div class="modal-overlay" id="countdownOverlay" onclick="closeCountdown(event)" style="z-index:6000">
+  <div class="countdown-box" id="countdownBox">
+    <button class="modal-close" onclick="closeCountdownDirect()" style="position:absolute;top:18px;right:18px">✕</button>
+    <div class="cd-icon">🏪</div>
+    <div class="cd-label">THE SUPERMARKET</div>
+    <div class="cd-subtitle">Se activará en</div>
+    <div class="cd-timer">
+      <div class="cd-unit"><span id="cdDays">10</span><small>días</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span id="cdHours">00</span><small>horas</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span id="cdMins">00</span><small>min</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span id="cdSecs">00</span><small>seg</small></div>
+    </div>
+    <div class="cd-bar-wrap"><div class="cd-bar" id="cdBar"></div></div>
+    <p class="cd-msg">El simulador 3D estará disponible muy pronto.<br>¡Vuelve a visitarnos!</p>
+  </div>
+</div>
 
 <!-- ===== MODAL DETALLES ===== -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)" style="z-index:5000">
