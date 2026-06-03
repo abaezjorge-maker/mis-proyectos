@@ -1151,12 +1151,12 @@ body:not(.dark-mode) .cd-bar-wrap{background:rgba(0,0,0,.07)}
     <div class="project-row" data-name="senales espacio mensajes universo antena radio web simbolica">
       <div class="project-icon">📡</div>
       <div class="project-info">
-        <span class="status pendiente">Pendiente</span>
+        <span class="status online">En Línea</span>
         <h3>Señales al Espacio</h3>
-        <p>Página experimental para enviar mensajes simbólicos al espacio y esperar respuesta.</p>
+        <p>Transmite mensajes al universo con animación de onda expansiva y muro de transmisiones.</p>
       </div>
       <div class="project-actions">
-        <a href="#" class="btn open" onclick="event.preventDefault(); openModal('espacio')">Ver</a>
+        <a href="https://abaezjorge-maker.github.io/Signalspace/" target="_blank" class="btn open">Abrir</a>
         <a href="#" class="btn edit" onclick="event.preventDefault(); openModal('espacio')">Detalles</a>
       </div>
     </div>
@@ -1496,19 +1496,19 @@ const proyectosData = {
   "espacio": {
     icon: "📡",
     title: "Señales al Espacio",
-    status: "Pendiente",
-    statusClass: "pendiente",
-    desc: "Página experimental donde los usuarios pueden escribir mensajes simbólicos al espacio y verlos representados como señales, estrellas o transmisiones visuales.",
+    status: "En Línea",
+    statusClass: "online",
+    desc: "Página experimental donde los usuarios pueden escribir mensajes simbólicos al espacio y verlos representados como señales de radio con onda expansiva. Incluye muro compartido de transmisiones.",
     tags: ["Web", "Experimento", "Espacio", "Arte digital", "JavaScript"],
     features: [
-      "Mensajes simbólicos al espacio",
-      "Animación visual tipo transmisión",
-      "Historial local de señales enviadas",
-      "Experiencia artística y futurista",
-      "Puede evolucionar a proyecto educativo"
+      "Mensajes transmitidos con animación de onda expansiva tipo señal de radio",
+      "Muro compartido con historial de todas las transmisiones enviadas",
+      "Diseño espacial inmersivo con estrellas animadas y tipografía futurista",
+      "Experiencia artística y futurista con paleta oscura de cosmos",
+      "Puede evolucionar a proyecto educativo o social"
     ],
-    url: null,
-    urlLabel: null
+    url: "https://abaezjorge-maker.github.io/Signalspace/",
+    urlLabel: "Abrir"
   },
   "juegosapp": {
     icon: "🎮",
@@ -1646,7 +1646,8 @@ function abrirProyectoAleatorio(){
     "https://abaezjorge-maker.github.io/trading-edge/",
     "https://abaezjorge-maker.github.io/frasesbyandy/",
     "https://abaezjorge-maker.github.io/ideas-by-andy/",
-    "https://abaezjorge-maker.github.io/dna/"
+    "https://abaezjorge-maker.github.io/dna/",
+    "https://abaezjorge-maker.github.io/Signalspace/"
   ];
 
   const elegido = proyectos[Math.floor(Math.random() * proyectos.length)];
